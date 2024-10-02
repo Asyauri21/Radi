@@ -60,4 +60,8 @@ def scrape_kbs_headlines(hal):
             wr.writerow(article)
 
 
-scrape_kbs_headlines(hal=5)
+try:
+    hal = int(input("Enter the number of pages to scrape: "))
+    scrape_kbs_headlines(hal=hal)
+except ValueError:
+    print("Please enter a valid integer.")
